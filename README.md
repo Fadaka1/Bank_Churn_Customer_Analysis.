@@ -54,5 +54,57 @@ The `Exited` column serves as the target variable for the churn analysis:
 
 The screenshot below shows the original dataset before data preparation and validation.
 
-![Original Bank Customer Churn Dataset](Images/Original Bank Churn Dataset.png)
+![Original Bank Customer Churn Dataset](Images/Original%20Bank%20Churn%20Dataset.png)
+
+##  Tools Used
+
+The following tools were used throughout the project:
+
+- **Microsoft Excel:** Used for initial data preparation and adjustments.
+- **SQL Server Management Studio (SSMS):** Used to validate the dataset through duplicate checks, NULL checks, Customer_ID verification and other data-quality checks.
+- **Power BI:** Used for data analysis, DAX calculations, visualisations and interactive dashboard development.
+- **Power Query:** Used within Power BI for data transformation and manipulation, including the creation of categorical groups and sorting columns.
+- **GitHub:** Used to document and present the project as part of a data analytics portfolio.
+
+##  Data Preparation and Validation
+
+Data preparation and validation were carried out using Microsoft Excel, SQL Server Management Studio (SSMS), and Power Query within Power BI. Each tool served a specific purpose in preparing the dataset for analysis.
+
+###  Excel Data Preparation
+
+Microsoft Excel was used for initial data preparation and adjustments before importing the dataset into SQL Server.
+
+The prepared dataset is shown below:
+
+![Prepared Bank Churn Dataset](Image/Prepared%20Bank%20Churn%20Data.png)
+
+###  SQL Server Data Validation
+
+SQL Server Management Studio (SSMS) was used to validate the imported dataset and assess its data quality.
+
+The validation checks included:
+
+- Checking for duplicate records.
+- Verifying the uniqueness of Customer_ID values.
+- Checking for NULL values across the dataset.
+- Examining categorical and binary values for consistency.
+- Reviewing unusual numerical values, including salary values below $1,000 and customers with zero account balances.
+- Identifying surname records containing question marks.
+
+The validation process helped assess the dataset's consistency and identify unusual values requiring review. Records were retained where there was insufficient evidence to classify the values as errors.
+
+###  Power Query Data Transformation
+
+Power Query was used within Power BI to transform and manipulate the data for analysis.
+
+The transformations included creating categorical groups for:
+
+- Age Group
+- Credit Score Group
+- Salary Group
+- Tenure Group
+- Balance Group
+- Product Count Category
+
+Additional sorting columns were created to maintain the correct order of these grouped categories in the Power BI visualisations.
 
