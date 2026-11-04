@@ -85,11 +85,124 @@ SQL Server Management Studio (SSMS) was used to validate the imported dataset an
 The validation checks included:
 
 - Checking for duplicate records.
+
+```sql
+SELECT DISTINCT *
+INTO dbo.Bank_Churn_Clean
+FROM dbo.Bank_Churn_Data$;
+```
+
+This query created the cleaned table, dbo.Bank_Churn_Clean, by removing duplicate records from the original imported table, reducing the dataset from 21,881 rows to 10,000 unique customer records.
+
+
 - Verifying the uniqueness of Customer_ID values.
+
+```sql
+SELECT
+    COUNT(*) AS Total_Records,
+    COUNT(DISTINCT Customer_ID) AS Unique_Customers
+FROM dbo.Bank_Churn_Clean;
+```
+
+Results:
+- Total Records: 10,000
+- Unique Customers: 10,000
+
+This confirmed that every customer ID in the cleaned table was unique.
+
+
 - Checking for NULL values across the dataset.
+
+```sql
+SELECT
+    SUM(CASE WHEN Customer_ID IS NULL THEN 1 ELSE 0 END) AS Customer_ID_NULLs,
+    SUM(CASE WHEN Surname IS NULL THEN 1 ELSE 0 END) AS Surname_NULLs,
+    SUM(CASE WHEN Credit_Score IS NULL THEN 1 ELSE 0 END) AS Credit_Score_NULLs,
+    SUM(CASE WHEN Geography IS NULL THEN 1 ELSE 0 END) AS Geography_NULLs,
+    SUM(CASE WHEN Gender IS NULL THEN 1 ELSE 0 END) AS Gender_NULLs,
+    SUM(CASE WHEN Age IS NULL THEN 1 ELSE 0 END) AS Age_NULLs,
+    SUM(CASE WHEN Tenure IS NULL THEN 1 ELSE 0 END) AS Tenure_NULLs,
+    SUM(CASE WHEN Balance IS NULL THEN 1 ELSE 0 END) AS Balance_NULLs,
+    SUM(CASE WHEN Num_Of_Products IS NULL THEN 1 ELSE 0 END) AS Products_NULLs,
+    SUM(CASE WHEN Has_Credit_Card IS NULL THEN 1 ELSE 0 END) AS Credit_Card_NULLs,
+    SUM(CASE WHEN Is_Active_Member IS NULL THEN 1 ELSE 0 END) AS Active_Member_NULLs,
+    SUM(CASE WHEN Estimated_Annual_Salary IS NULL THEN 1 ELSE 0 END) AS Salary_NULLs,
+    SUM(CASE WHEN Exited IS NULL THEN 1 ELSE 0 END) AS Exited_NULLs
+FROM dbo.Bank_Churn_Clean;
+```
+
+Result: All 13 columns returned 0 NULL values.
+
+
 - Examining categorical and binary values for consistency.
+
+```sql
+SELECT
+    Geography,
+    COUNT(*) AS Customer_Count
+FROM dbo.Bank_Churn_Clean
+GROUP BY Geography
+ORDER BY Geography;
+```
+
+```sql
+SELECT
+    Gender,
+    COUNT(*) AS Customer_Count
+FROM dbo.Bank_Churn_Clean
+GROUP BY Gender
+ORDER BY Gender;
+```
+
+```sql
+SELECT
+    SUM(CASE WHEN Has_Credit_Card NOT IN (0, 1) THEN 1 ELSE 0 END) AS Invalid_Credit_Card_Values,
+    SUM(CASE WHEN Is_Active_Member NOT IN (0, 1) THEN 1 ELSE 0 END) AS Invalid_Active_Member_Values,
+    SUM(CASE WHEN Exited NOT IN (0, 1) THEN 1 ELSE 0 END) AS Invalid_Exited_Values
+FROM dbo.Bank_Churn_Clean;
+```
+
+Result: All three columns returned 0 invalid values.
+
+
 - Reviewing unusual numerical values, including salary values below $1,000 and customers with zero account balances.
+
+```sql
+SELECT
+    COUNT(*) AS Salary_Values_Below_1000
+FROM dbo.Bank_Churn_Clean
+WHERE Estimated_Annual_Salary < 1000;
+```
+
+Result: 59 records.
+
+```sql
+SELECT
+    COUNT(*) AS Customers_With_Zero_Balance
+FROM dbo.Bank_Churn_Clean
+WHERE Balance = 0;
+```
+
+Result: 3,617 records.
+
+Both groups were reviewed and retained because I found no evidence that the values were incorrect.
+
+
 - Identifying surname records containing question marks.
+
+```sql
+SELECT
+    COUNT(*) AS Surnames_With_Question_Marks
+FROM dbo.Bank_Churn_Clean
+WHERE Surname LIKE '%?%';
+```
+
+Result: 92 records across seven surname patterns.
+
+
+**Findings:** The query identified 92 customer records across seven surname patterns: H? (19), Hs? (15), L? (14), Y? (13), Y?an (13), K? (11), and Hs?eh (7).
+
+The records were retained because the original surname characters could not be reliably recovered. Deleting them would have reduced the dataset from 10,000 to 9,908 records and resulted in the loss of otherwise usable customer information. Retaining them helped preserve data completeness and avoid unnecessary data loss.
 
 The validation process helped assess the dataset's consistency and identify unusual values requiring review. Records were retained where there was insufficient evidence to classify the values as errors.
 
