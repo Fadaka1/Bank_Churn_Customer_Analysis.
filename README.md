@@ -50,13 +50,13 @@ The `Exited` column serves as the target variable for the churn analysis:
 - `1` = Customer exited the bank.
 - `0` = Customer remained with the bank.
 
-### Original Dataset
+### Original Dataset.
 
 The screenshot below shows the original dataset before data preparation and validation.
 
 ![Original Bank Customer Churn Dataset](Images/Original%20Bank%20Churn%20Dataset.png)
 
-##  Tools Used
+##  Tools Used.
 
 The following tools were used throughout the project:
 
@@ -66,11 +66,11 @@ The following tools were used throughout the project:
 - **Power Query:** Used within Power BI for data transformation and manipulation, including the creation of categorical groups and sorting columns.
 - **GitHub:** Used to document and present the project as part of a data analytics portfolio.
 
-##  Data Preparation and Validation
+##  Data Preparation and Validation.
 
 Data preparation and validation were carried out using Microsoft Excel, SQL Server Management Studio (SSMS), and Power Query within Power BI. Each tool served a specific purpose in preparing the dataset for analysis.
 
-###  Excel Data Preparation
+###  Excel Data Preparation.
 
 Microsoft Excel was used for initial data preparation and adjustments before importing the dataset into SQL Server.
 
@@ -78,7 +78,7 @@ The prepared dataset is shown below:
 
 ![Prepared Bank Churn Dataset](Image/Prepared%20Bank%20Churn%20Data.png)
 
-###  SQL Server Data Validation
+###  SQL Server Data Validation.
 
 SQL Server Management Studio (SSMS) was used to validate the imported dataset and assess its data quality.
 
@@ -206,7 +206,7 @@ The records were retained because the original surname characters could not be r
 
 The validation process helped assess the dataset's consistency and identify unusual values requiring review. Records were retained where there was insufficient evidence to classify the values as errors.
 
-###  Power Query Data Transformation
+###  Power Query Data Transformation.
 
 Power Query was used within Power BI to transform and manipulate the data for analysis.
 
@@ -224,4 +224,78 @@ Additional sorting columns were created to maintain the correct order of these g
 Find the Power query advanced editor below:
 
 ![Power Query Advanced Editor](Images/Power_Query_Advanced_Editor.png.png)
+
+
+
+##  Data Analysis and DAX Measures.
+
+DAX (Data Analysis Expressions) was used in Power BI to create measures for calculating key customer churn and retention metrics.
+
+The following measures were created:
+
+###  Total Customers
+
+**Purpose:** Counts the total number of customer records in the cleaned dataset.
+
+```dax
+Total Customers = COUNTROWS(Bank_Churn_Clean)
+```
+
+**Result:** 10,000 customers.
+
+###  Churned Customers
+
+**Purpose:** Counts customers who exited the bank, where `Exited = 1`.
+
+```dax
+Churned Customers =
+CALCULATE(
+    COUNTROWS(Bank_Churn_Clean),
+    Bank_Churn_Clean[Exited] = 1
+)
+```
+
+**Result:** 2,037 churned customers.
+
+###  Churn Rate
+
+**Purpose:** Calculates the percentage of customers who exited the bank relative to the total customer base.
+
+```dax
+Churn Rate =
+DIVIDE(
+    [Churned Customers],
+    [Total Customers],
+    0
+)
+```
+
+**Result:** 20.37%.
+
+###  Retention Rate
+
+**Purpose:** Calculates the percentage of customers who remained with the bank.
+
+```dax
+Retention Rate =
+1 - [Churn Rate]
+```
+
+**Result:** 79.63%.
+
+###  Customer Churn Analysis
+
+The measures were used to examine customer churn patterns across the following dimensions:
+
+- Geography
+- Gender
+- Age Group
+- Number of Products
+- Active Membership
+- Credit Score Group
+- Salary Group
+- Tenure Group
+- Balance Group
+
+The analysis focused on comparing churn rates across customer segments to identify patterns and areas that may require attention from the bank's management team.
 
