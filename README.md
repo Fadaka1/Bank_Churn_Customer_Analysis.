@@ -221,3 +221,7 @@ The transformations included creating categorical groups for:
 
 Additional sorting columns were created to maintain the correct order of these grouped categories in the Power BI visualisations.
 
+Find the Power query advanced editor below:
+
+![Power Query Advanced Editor](Images/Power_Query_Advanced_Editor.png.png)
+
