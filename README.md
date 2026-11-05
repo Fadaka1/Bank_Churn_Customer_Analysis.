@@ -367,7 +367,7 @@ Churn rates across credit score groups ranged from **19.54% to 23.73%**. The 350
 
 Salary-group churn rates ranged from **18.77% to 20.96%**, while tenure-group churn rates ranged from **18.87% to 21.30%**. These relatively narrow ranges show no clear pattern of increasing or decreasing churn across salary or tenure groups.
 
-### 8.2 Business Insights
+###  Business Insights
 
 The findings highlight several areas that may require further attention from the bank's customer retention team.
 
@@ -378,7 +378,7 @@ The findings highlight several areas that may require further attention from the
 - **Account balance:** The higher churn rate among customers with balances between $100,001 and $150,000 deserves attention because this is a large customer segment. The result for customers above $200,000 should be treated cautiously due to the small sample size.
 - **Credit score, salary and tenure:** These variables showed relatively small differences in churn rates across their respective groups. They may be less useful as standalone indicators of churn in this dataset.
 
-### 8.3 Recommendations
+###  Recommendations
 
 Based on the findings, the following actions could be considered by the bank:
 
