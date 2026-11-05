@@ -308,13 +308,13 @@ The first page, **Bank Churn Detailed Analysis**, serves as a supporting analysi
 
 The second page, **Bank Churn Main Dashboard**, is the main interactive dashboard. It brings together the key performance indicators (KPIs) and selected visualizations in a consolidated layout. It also includes slicers for Geography, Gender and Age Group, allowing users to filter the dashboard and examine churn patterns across different customer segments.
 
-###  Bank Churn Detailed Analysis Page
+###  Bank Churn Detailed Analysis Page.
 
 The detailed analysis page contains the supporting visualizations used to examine customer churn across the selected variables.
 
 ![Bank Churn Detailed Analysis](Images/Bank_Churn_Detailed_Analysis.png)
 
-Bank Churn Main Dashboard
+Bank Churn Main Dashboard.
 
 The main dashboard presents the key findings through four KPI cards, seven visualizations and three interactive slicers. It provides a consolidated view of customer churn and allows users to explore the results using the available filters.
 
@@ -323,11 +323,11 @@ The main dashboard presents the key findings through four KPI cards, seven visua
 
 
 
-##  Key Findings and Business Insights
+##  Key Findings and Business Insights.
 
 This section presents the main findings from the Bank Customer Churn Analysis and explains their potential business implications. The findings are based on comparisons of churn rates across customer demographics, geographical regions and account-related characteristics.
 
-###  Key Findings
+###  Key Findings.
 
 The analysis produced the following findings:
 
@@ -367,7 +367,7 @@ Churn rates across credit score groups ranged from **19.54% to 23.73%**. The 350
 
 Salary-group churn rates ranged from **18.77% to 20.96%**, while tenure-group churn rates ranged from **18.87% to 21.30%**. These relatively narrow ranges show no clear pattern of increasing or decreasing churn across salary or tenure groups.
 
-###  Business Insights
+###  Business Insights.
 
 The findings highlight several areas that may require further attention from the bank's customer retention team.
 
@@ -378,7 +378,7 @@ The findings highlight several areas that may require further attention from the
 - **Account balance:** The higher churn rate among customers with balances between $100,001 and $150,000 deserves attention because this is a large customer segment. The result for customers above $200,000 should be treated cautiously due to the small sample size.
 - **Credit score, salary and tenure:** These variables showed relatively small differences in churn rates across their respective groups. They may be less useful as standalone indicators of churn in this dataset.
 
-###  Recommendations
+###  Recommendations.
 
 Based on the findings, the following actions could be considered by the bank:
 
@@ -395,6 +395,35 @@ Based on the findings, the following actions could be considered by the bank:
 6. **Use multiple customer indicators:** Avoid relying on credit score, salary or tenure alone when identifying customers who may be at risk of leaving. Consider these variables alongside other customer characteristics and account activity.
 
 These recommendations are based on observed associations in the dataset. Further investigation would be required to establish the reasons behind customer churn and assess the effectiveness of any proposed retention measures.
+
+
+##  Conclusion.
+
+The Bank Customer Churn Analysis examined customer churn patterns across 10,000 bank customers using Microsoft Excel, SQL Server Management Studio (SSMS) and Power BI.
+
+The analysis identified an overall churn rate of **20.37%**, representing 2,037 customers who had exited the bank. The results showed notable differences in churn across geographical regions, gender, age groups, number of products held and account balance groups.
+
+Germany recorded the highest geographical churn rate at 32.44%, while female customers recorded a higher churn rate than male customers. Customers aged 46–55 and customers holding three or four products also recorded high churn rates. However, the smaller customer populations in some product and balance groups require careful interpretation.
+
+Credit score, salary and tenure showed relatively small differences in churn rates across their respective groups.
+
+The findings provide the bank with a clearer view of customer segments associated with higher churn rates. They can help guide further investigation and support the development of targeted customer retention strategies.
+
+Overall, the project demonstrates how data preparation, SQL validation, DAX calculations and Power BI visualization can be combined to examine customer behavior and communicate business findings.
+
+##  Limitations of the Analysis.
+
+The analysis has some limitations that should be considered when interpreting the findings:
+
+- **Dataset scope:** The analysis covers 10,000 customer records from three geographical markets: France, Germany and Spain. The findings may not represent customers from other markets or banking institutions.
+- **Limited customer information:** The dataset contains demographic, financial and account-related information but does not provide detailed information about customer satisfaction, complaints, service experiences or reasons for leaving.
+- **No causal evidence:** The analysis identifies relationships between customer characteristics and churn rates. It does not establish that any particular characteristic caused customers to leave the bank.
+- **Small customer segments:** Some groups, particularly customers holding four products and customers with balances above $200,000, contain relatively few records. Their churn rates should therefore be interpreted with caution.
+- **Limited time-based analysis:** The available dataset does not provide sufficient information for examining changes in churn over time or identifying seasonal patterns.
+- **Scope of variables analyzed:** Although credit card ownership was available in the dataset, it was not examined as a separate churn analysis dimension.
+
+These limitations mean that the findings should be treated as indicators of customer churn patterns rather than definitive explanations of customer behavior. Further analysis using additional customer information and time-based records could provide a deeper understanding of the factors associated with churn.
+
 
 
 
