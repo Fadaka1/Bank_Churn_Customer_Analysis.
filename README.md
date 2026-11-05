@@ -299,3 +299,111 @@ The measures were used to examine customer churn patterns across the following d
 
 The analysis focused on comparing churn rates across customer segments to identify patterns and areas that may require attention from the bank's management team.
 
+
+##  Power BI Dashboard and Visualizations.
+
+The **Bank Customer Churn Analysis** Power BI report consists of two pages, each serving a different purpose in presenting the analysis.
+
+The first page, **Bank Churn Detailed Analysis**, serves as a supporting analysis page. It contains the individual visualizations used to examine customer churn patterns across different customer characteristics and account-related variables. It does not include slicers and is primarily used to support the detailed examination of the results.
+
+The second page, **Bank Churn Main Dashboard**, is the main interactive dashboard. It brings together the key performance indicators (KPIs) and selected visualizations in a consolidated layout. It also includes slicers for Geography, Gender and Age Group, allowing users to filter the dashboard and examine churn patterns across different customer segments.
+
+###  Bank Churn Detailed Analysis Page
+
+The detailed analysis page contains the supporting visualizations used to examine customer churn across the selected variables.
+
+![Bank Churn Detailed Analysis](Images/Bank_Churn_Detailed_Analysis.png)
+
+Bank Churn Main Dashboard
+
+The main dashboard presents the key findings through four KPI cards, seven visualizations and three interactive slicers. It provides a consolidated view of customer churn and allows users to explore the results using the available filters.
+
+![Bank Churn Main Dashboard](Images/Bank_Churn_Main_Dashboard.png)
+
+
+
+
+##  Key Findings and Business Insights
+
+This section presents the main findings from the Bank Customer Churn Analysis and explains their potential business implications. The findings are based on comparisons of churn rates across customer demographics, geographical regions and account-related characteristics.
+
+###  Key Findings
+
+The analysis produced the following findings:
+
+**1. Overall Customer Churn**
+
+Out of 10,000 customers, 2,037 had exited the bank, representing a churn rate of **20.37%**. The remaining 7,963 customers represented a retention rate of **79.63%**.
+
+**2. Customer Churn by Geography**
+
+Germany recorded the highest churn rate at **32.44%**, compared with Spain at **16.67%** and France at **16.15%**. This indicates a substantial difference in customer churn across the three geographical markets.
+
+**3. Customer Churn by Gender**
+
+Female customers recorded a higher churn rate of **25.07%**, compared with **16.46%** among male customers. Female customers also accounted for 56% of all churned customers, while male customers accounted for 44%.
+
+**4. Customer Churn by Age Group**
+
+Customers aged **46–55** recorded the highest churn rate at **50.57%**, followed by customers aged **56–65** at **46.32%**. The 26–35 age group recorded the lowest churn rate at **8.50%**.
+
+**5. Customer Churn by Number of Products**
+
+Customers holding three products recorded a churn rate of **82.71%**, while those holding four products recorded **100%**. In comparison, customers holding one product had a churn rate of **27.71%**, and those holding two products recorded **7.58%**.
+
+However, the three-product and four-product groups contained only 266 and 60 customers respectively. Their high churn rates should therefore be interpreted with caution.
+
+**6. Customer Churn by Account Balance**
+
+Customers with balances between **$100,001 and $150,000** recorded a churn rate of **25.77%**, representing the largest customer group with 3,830 records.
+
+The highest churn rate occurred among customers with balances above $200,000 at **55.88%**, but this group contained only 34 customers. Customers with zero balances recorded a lower churn rate of **13.82%**.
+
+**7. Customer Churn by Credit Score**
+
+Churn rates across credit score groups ranged from **19.54% to 23.73%**. The 350–499 credit score group recorded the highest rate, while the 800–850 group recorded the lowest. The relatively small difference suggests that credit score had a weaker relationship with churn than some of the other customer characteristics examined.
+
+**8. Customer Churn by Salary and Tenure**
+
+Salary-group churn rates ranged from **18.77% to 20.96%**, while tenure-group churn rates ranged from **18.87% to 21.30%**. These relatively narrow ranges show no clear pattern of increasing or decreasing churn across salary or tenure groups.
+
+### 8.2 Business Insights
+
+The findings highlight several areas that may require further attention from the bank's customer retention team.
+
+- **Geographical differences:** Germany's higher churn rate suggests that the bank may need to examine customer experience, service delivery and retention practices in that market.
+- **Gender differences:** The higher churn rate among female customers suggests an opportunity to investigate differences in customer needs, engagement and satisfaction.
+- **Age-related churn:** The higher churn rates among customers aged 46–65 indicate that this age segment may require closer examination to understand the factors associated with customer exits.
+- **Product ownership:** The high churn rates among customers holding three or four products warrant further investigation. The bank should examine product combinations, usage patterns and customer experiences within these smaller groups.
+- **Account balance:** The higher churn rate among customers with balances between $100,001 and $150,000 deserves attention because this is a large customer segment. The result for customers above $200,000 should be treated cautiously due to the small sample size.
+- **Credit score, salary and tenure:** These variables showed relatively small differences in churn rates across their respective groups. They may be less useful as standalone indicators of churn in this dataset.
+
+### 8.3 Recommendations
+
+Based on the findings, the following actions could be considered by the bank:
+
+1. **Review customer retention in Germany:** Investigate the reasons behind the higher churn rate and assess whether local customer experience or service issues contribute to the pattern.
+
+2. **Strengthen customer engagement:** Examine the needs and experiences of female customers and customers aged 46–65 to identify possible improvements in customer communication and retention programs.
+
+3. **Investigate multi-product customers:** Review the products held by customers with three or four products, including product combinations, usage and account activity, before making changes to product offerings.
+
+4. **Prioritizes large customer segments:** Examine the needs and churn patterns of customers with balances between $100,001 and $150,000, given the size of this group and its 25.77% churn rate.
+
+5. **Monitor smaller customer segments carefully:** Conduct further investigation into customers with balances above $200,000 and those holding three or four products before making broad retention decisions based on their high churn rates.
+
+6. **Use multiple customer indicators:** Avoid relying on credit score, salary or tenure alone when identifying customers who may be at risk of leaving. Consider these variables alongside other customer characteristics and account activity.
+
+These recommendations are based on observed associations in the dataset. Further investigation would be required to establish the reasons behind customer churn and assess the effectiveness of any proposed retention measures.
+
+
+
+
+
+
+
+
+
+
+
+
